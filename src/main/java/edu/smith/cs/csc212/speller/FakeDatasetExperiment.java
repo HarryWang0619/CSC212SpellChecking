@@ -39,6 +39,9 @@ public class FakeDatasetExperiment {
 		List<String> output = new ArrayList<>(numSamples);
 		// TODO: select numSamples * fractionYes words from yesWords; create the rest as
 		// no words.
+		for (int i = 0; i < numSamples*fractionYes; i++) {
+			output.add(yesWords.get(1));
+		}
 		return output;
 	}
 

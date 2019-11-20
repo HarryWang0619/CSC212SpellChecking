@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CheckSpelling",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.speller.CheckSpelling",
+            "projectName": "P8SpellChecking"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WhyNotJustAList",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.speller.WhyNotJustAList",
+            "projectName": "P8SpellChecking"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FakeDatasetExperiment",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.speller.FakeDatasetExperiment",
+            "projectName": "P8SpellChecking"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BookExperiment",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.speller.BookExperiment",
+            "projectName": "P8SpellChecking"
+        }
+    ]
+}

@@ -55,6 +55,7 @@ public class CheckSpelling {
 	 * This is **an** entry point of this assignment.
 	 * @param args - unused command-line arguments.
 	 */
+
 	public static void main(String[] args) {
 		// --- Load the dictionary.
 		List<String> listOfWords = loadDictionary();
@@ -81,8 +82,45 @@ public class CheckSpelling {
 		timeLookup(listOfWords, hm100k);
 		
 		
+        
+        
+
+        long startTreeTime1 = System.nanoTime();
+		long endTreeTime1 = System.nanoTime();
+		System.out.println("TreeSet normal: "+ (endTreeTime1 - startTreeTime1)/1e9 + " seconds");
 		
-	
+		long startTreeTime2 = System.nanoTime();
+		TreeSet<String> tree = new TreeSet<>();
+		for(String w : listOfWords) {
+			tree.add(w);
+		}
+		long endTreeTime2 = System.nanoTime();
+		System.out.println("TreeSet calling add: "+(endTreeTime2 - startTreeTime2)/1e9+" seconds");
+		
+		long startHashTime1 = System.nanoTime();
+		long endHashTime1 = System.nanoTime();
+		System.out.println("HashSet normal: "+ (endHashTime1 - startHashTime1)/1e9 + " seconds");
+		
+		long startHashTime2 = System.nanoTime();
+		HashSet<String> hash = new HashSet<>();
+		for(String w : listOfWords)
+			hash.add(w);
+		long endHashTime2 = System.nanoTime();
+		System.out.println("HashSet calling add: "+(endHashTime2 - startHashTime2)/1e9 + " seconds" );
+		
+		long startSSLSTime = System.nanoTime();
+		long endSSLSTime = System.nanoTime();
+		System.out.println("SortedStringListSet: "+ (endSSLSTime - startSSLSTime)/1e9 + " seconds");
+		
+		long startCharTime = System.nanoTime();
+		long endCharTime = System.nanoTime();
+		System.out.println("CharTrie: "+ (endCharTime - startCharTime)/1e9 + " seconds");
+		
+		long startLHTime = System.nanoTime();
+		long endLHTime = System.nanoTime();
+		System.out.println("LLHash: "+ (endLHTime - startLHTime)/1e9 + " seconds");
+		
+		
 		// --- print statistics about the data structures:
 		System.out.println("Count-Nodes: "+trie.countNodes());
 		System.out.println("Count-Items: "+hm100k.size());
